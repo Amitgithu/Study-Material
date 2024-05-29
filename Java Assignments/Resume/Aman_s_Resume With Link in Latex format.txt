@@ -1,0 +1,290 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Amit Kumar} \\ \vspace{1pt}
+    Mathura, Uttar Pradesh \\ \vspace{1pt}
+     { \raisebox{-0.1\height}\faPhone\ {+91-9548731683} ~} {\raisebox{-0.2\height}\faEnvelope\ {amit909563@gmail.com} ~ 
+    {\raisebox{-0.2\height}\faLinkedinSquare\ {Linkedin}  ~
+\end{center}
+ \vspace{0.1mm}
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GLA University, Mathura}{2021 – 2025}
+      {B.Tech - Computer Science and Engineering - \textbf{CPI} - \textbf{8.58}}{Mathura, Uttar Pradesh}
+  \resumeSubHeadingListEnd
+  
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {College Name}{MM YYYY -- MM YYYY}
+%       {Exam Name - Course Name  - \textbf{Percentage} - \textbf{xx\%}}{city, country}
+%   \resumeSubHeadingListEnd
+
+%------RELEVANT COURSEWORK-------
+\section{COURSEWORK / SKILLS}
+    %\resumeSubHeadingListStart
+        \begin{multicols}{4}
+            \begin{itemize}[itemsep=-2pt, parsep=5pt]
+                \item DSA
+                \item Operating Systems
+                \item Oops Concepts
+                \item Computer Networks
+                \item JavaScript
+                \item React
+                \item DBMS
+            \end{itemize}
+        \end{multicols}
+        \vspace{2pt}
+    %\resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+          {\href{https://github.com/aman-spp/Scaler-task/tree/main/Scaler-Task-main}{\textbf{\large {Quiz Application}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink } $|$ \large {\underline{MongoDB, Express, React, NodeJS, Bootstrap}}}{Aug 2023 – Sep 2023 }\\
+          \resumeItemListStart
+            \resumeItem{\normalsize{Developed interactive Quiz Application using React, JavaScript and Bootstrap for engaging user experience.}}
+            \resumeItem{\normalsize{Implemented real-time interactions, dynamic question loading, and instant feedback using JavaScript.}}
+            
+            
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          \resumeProjectHeading
+          {\href{https://github.com/aman-spp/Scaler-task/tree/main/Scaler-Task-main}{\textbf{\large {E-Commerce Website}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink } $|$ \large {\underline{NodeJS, Express, MongoDB, JavaScript, Bootstrap}}}{Nov 2023 – Dec 2023 }\\
+          \resumeItemListStart
+            \resumeItem{\normalsize{Implemented dynamic filtering, engaging landing page, and product management (add/delete).}}
+            \resumeItem{\normalsize{Created robust authentication for user data protection and personalized shopping.}}
+            \resumeItem{\normalsize{ Integrated seamless payment gateway for secure transactions.}}
+            
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          
+          \resumeProjectHeading
+          {\href{https://github.com/aman-spp/Scaler-task/tree/main/Scaler-Task-main}{\textbf{\large {Stack Overflow Clone}}} \href{Project Link}{\raisebox{-0.1\height}\faExternalLink } $|$ \large {\underline{MongoDB, Express, React, NodeJS, Bootstrap}}}{Mar 2024 – Apr 2024 }\\
+          \resumeItemListStart
+            % \resumeItem{\normalsize{We fetch(relevant) data from GitHub for that we required GitHub API and performing various operation on it.}}
+            \resumeItem {\normalsize{Developed a Stack Overflow clone project using MongoDB, Express, React, NodeJS, and Bootstrap. }}
+            \resumeItem{\normalsize{Implemented core features: question posting, answers, voting, tags, user profiles, search, comments \newline and discussions.}}
+            \resumeItem{\normalsize{Utilized toast notifications for efficient error handling, providing users with clear feedback on \newline encountered issues.}}
+            \resumeItem{\normalsize{Integrated a payment feature allowing users to access unlimited question asking and answer posting capabilities.}}
+            
+            
+          \resumeItemListEnd 
+          \vspace{-5pt}
+
+          
+    \resumeSubHeadingListEnd
+\vspace{-11pt}
+
+%
+
+
+% -----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {GLA University, Mathura 
+      {\raisebox{-0.1\height}\faExternalLink }}{May 2023 - July 2023} 
+      {{SDE Intern}}{}
+      \resumeItemListStart
+      {\resumeItem{\normalsize{Designed and Developed a Video Streaming Software for online examinations using Python.}}}
+
+        {\resumeItem{\normalsize{Utilized Python frameworks for robust backend, ensuring smooth video playback and intuitive UI.}}}
+  
+      \resumeItemListEnd  
+  \resumeSubHeadingListEnd
+\vspace{-11pt}
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Languages:}}{  \normalsize{Java, Python, JavaScript, SQL}} \\
+     \textbf{\normalsize{Technologies/Frameworks:}}{  \normalsize{HTML5, CSS3, MongoDB, Express, React, NodeJS, Bootstrap}} \\
+    }}
+ \end{itemize}
+ \vspace{-11pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{CODING PLATFORMS}
+    \resumeSubHeadingListStart
+            \resumeItemListStart
+                \resumeItem{\normalsize{Solved \textbf{550+} Problems on \textbf{Leetcode}.
+                \href{https://leetcode.com/Amit_Kumar905/}{\raisebox{-0.1\height}\faExternalLink }}}
+                
+                \resumeItem{\normalsize{Solved \textbf{400+} Problems across \textbf{GeeksforGeeks}.
+                \href{https://www.geeksforgeeks.org/user/amit90fd81/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user}{\raisebox{-0.1\height}\faExternalLink }}}
+                
+                \resumeItem{\normalsize{Codeforces Max Rating \textbf{1027} 
+                \href{https://codeforces.com/profile/amit_kumar90}{\raisebox{-0.1\height}\faExternalLink }}}
+                % \resumeItem{\normalsize{Participation Certificate. \href{ParticipationCertificateLink.com}{\raisebox{-0.1\height}\faExternalLink }}}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+ \vspace{-11pt}
+ 
+  %-----------CERTIFICATIONS---------------
+\section{CERTIFICATIONS}
+
+$\sbullet[.75] \hspace{0.1cm}$ {Certified in Javascript - Coursera.}\hspace{2.59cm}\\
+$\sbullet[.75] \hspace{0.2cm}${Certified in Backend Technologies - Coding Blocks}\hspace{1.6cm}\\
+$\sbullet[.75] \hspace{0.2cm}${Certified in  Frontend Technologies - Coursera.} \hspace{1cm}\\
+
+ 
+ \end{document}
+ 

@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Problem2 {
+	static String str = "hjjkdjkjkjkdskjhfhjdskkjdsjkkjkjdkjdkjfhjkdkjkdkfkfkkdskkhfkkskkkfsk";
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int test = sc.nextInt();
+		int counter = 1;
+		while (test > 0) {
+			int P = sc.nextInt();
+			str = "hjjkdjkjkjkdskjhfhjdskkjdsjkkjkjdkjdkjfhjkdkjkdkfkfkkdskkhfkkskkkfsk";
+			boolean ans = Sum41(P, 1, 100, "", 0, 1);
+//			System.out.println("str.length() : " + str.length());
+			String[] s = str.split(" ");
+			if(ans) {
+				System.out.print("Case #" + counter + ": " + s.length + " " + str);
+			}
+			else {
+				System.out.print("Case #" + counter + ": " + -1);
+			}
+			System.out.println();
+			counter++;
+			test--;
+		}
+
+	}
+
+	public static boolean Sum41(int P, int curr_val, int n, String ans, int sum, int product) {
+		if (curr_val >41 || ans.length() > 200 || sum > 41 || product > P) {
+			return false;
+		}
+		if (sum == 41 && product == P) {
+			if(str.length()>ans.length()) {
+				str = ans;
+			}
+			return true;
+		}
+		boolean a = Sum41(P, curr_val, n, ans + curr_val + " ", sum + curr_val, product * curr_val);
+		boolean b = Sum41(P, curr_val + 1, n, ans, sum, product);
+
+		return a || b;
+	}
+
+}

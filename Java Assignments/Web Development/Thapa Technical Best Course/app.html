@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="my-div second" style="border:3px solid red;padding: 10px;">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione in, illum ea praesentium at consequatur
+            necessitatibus qui obcaecati dolores officia.</p>
+    </div>
+
+    <button onclick="handleClick()">Click me</button>
+
+</body>
+<script>
+
+
+
+    console.log("Start");
+
+    console.log("Value of p Before : ", p);
+
+    var p = new Promise((resolve, reject) => {
+        console.log("Enter into Promise");
+        setTimeout(()=>{
+            resolve("Promise Resolved Successfully.");
+        },5000);
+        console.log("Exit the Promise");
+    });
+
+    console.log("Value of p After : ", p);
+
+
+    function getData() {
+        p.then(function primise(res) {
+            console.log(res);
+        })
+    }
+
+    getData();
+
+
+    console.log("End");
+</script>
+
+</html>

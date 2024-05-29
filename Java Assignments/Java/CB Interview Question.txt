@@ -1,0 +1,55 @@
+1. Introduce about yourself
+2. how you rate youself in JS out of 10
+3. What is Promise ?
+
+Output Based :
+
+for (var i = 1; i <= 5; i++) {
+	setTimeout(function() {
+       console.log(i);
+     }, 0);
+  }
+
+
+var obj = {
+    value: 42,
+    getValue: function() {
+
+      console.log(this.value);
+    }
+  };
+  var getValue = obj.getValue;
+  getValue();
+
+
+Answer :
+
+for (let i = 1; i <= 5; i++) {
+	setTimeout(function() {
+       console.log(i);
+     }, 0);
+  }
+
+var obj = {
+    value: 42,
+    getValue: function() {
+	// 1. without changing this keyword
+	// 2. use call , apply, bind concept
+      console.log(obj.value); // temporary correct 
+    }
+  };
+  var getValue = obj.getValue;
+  getValue();
+
+
+Nodejs :
+
+What are Middleware ?
+In Mongodb what is upset function ?
+How to call next middleware function ?
+Nodejs is single-threaded or multi-threaded ?
+
+What will be the output :
+if we print console.log(this); then which two function/method will be call in both nodejs and JS
+
+Write a program of Promise ?

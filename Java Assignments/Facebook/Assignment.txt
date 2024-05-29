@@ -1,0 +1,835 @@
+1. Vertical Order Print Binary Tree
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.Vector;
+public class Main {
+ 	static Scanner sc = new Scanner(System.in);
+ 	public static void main(String[] args) {
+ 		Main m = new Main();
+ 		int n = sc.nextInt();
+ 		BinaryTree bt = m.new BinaryTree();
+ 		HashMap<Integer,ArrayList<Integer>> map=new HashMap<>();
+		bt.printVerticalOrder(bt.root,map);
+		ArrayList<Integer> keys=new ArrayList<>(map.keySet());
+		Collections.sort(keys);
+		for(int i:keys){
+			ArrayList<Integer> list=map.get(i);
+			for(int j:list)
+				System.out.print(j+" ");
+		}
+ 	}
+ 	private class BinaryTree {
+ 		private class Node {
+ 			int data;
+ 			Node left;
+ 			Node right;
+ 		}
+ 		private Node root;
+ 		private int size;
+ 		public BinaryTree() {
+ 		this.root = this.takeInput();
+ 	}
+ 	public Node takeInput() {
+ 		Queue<Node> q = new LinkedList<>();
+ 		Node nn = new Node();
+ 		int val = sc.nextInt();
+ 		nn.data = val;
+ 		root = nn;
+ 		q.add(root);
+ 		while(!q.isEmpty()){
+ 		Node help = q.remove();
+ 		int left = sc.nextInt();
+ 		int right = sc.nextInt();
+ 		if(left != -1){
+ 			Node l = new Node();
+ 			l.data = left;
+ 			help.left = l;
+ 			q.add(l);
+ 		}
+ 		if(right != -1){
+ 			Node r = new Node();
+ 			r.data=right;
+ 			help.right = r;
+ 			q.add(r);
+ 		}
+ 		}
+ return root;
+ }
+ public void printVerticalOrder(Node root, HashMap<Integer,ArrayList<Integer>> a){
+//  TreeMap<Integer, Vector<Integer> > m
+//  = new TreeMap<>();
+ int b= 0;
+ VOT(root,b, a);
+//  for (Entry<Integer, Vector<Integer> > entry :
+//  m.entrySet()) {
+// //  System.out.println(entry.getValue());
+//  a.add(entry.getValue());
+//  }
+ }
+ 	public void VOT(Node root, int axis, HashMap<Integer,ArrayList<Integer>> map)
+ 	{
+ 		if(root==null)
+	   		return;
+
+	   if(map.containsKey(axis)){
+		   ArrayList<Integer> list=map.get(axis);
+		   list.add(root.data);
+	   }
+	   else{
+		   ArrayList<Integer> list=new ArrayList<>();
+		   list.add(root.data);
+		   map.put(axis,list);
+	   }
+	   VOT(root.left,axis-1,map);
+	   VOT(root.right,axis+1,map);
+	 }
+ }
+}
+
+2. Tree top view
+
+import java.util.*;
+import java.io.*;
+public class Main {
+    public static void main(String args[]) throws Exception{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        String[] arr=br.readLine().split(" ");
+        BinaryTree bt=new BinaryTree(arr);
+        
+        bt.topview();
+        
+    }
+}
+
+class BinaryTree
+{
+    private class Node
+    {
+        int data;
+        Node left,right;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    Node root;
+
+    BinaryTree(String[] arr)
+    {
+        Queue<Node> queue=new LinkedList<Node>();
+        construct(arr,0,queue);
+    }
+	
+	TreeMap<Integer,Integer>map = new TreeMap<>();
+    public void topview()
+    {
+        verticalTraversalTop(this.root,0);
+		Set<Integer>keyset = map.keySet();
+		// System.out.println("------------------");
+		for(int key : keyset){
+
+			System.out.print(map.get(key)+" ");
+		}
+    }
+
+   private void verticalTraversalTop(Node root, int axis) {
+	   if(root.data == -1)
+	   		return;
+
+		// System.out.println(root.data+" "+axis);
+	   if(!map.containsKey(axis)){
+		   map.put(axis,root.data);
+	   }
+
+	   verticalTraversalTop(root.left,axis-1);
+	   verticalTraversalTop(root.right, axis+1);
+   }
+
+
+    private void construct(String[] arr,int ind,Queue<Node> queue)
+    {
+        if(ind>=arr.length)
+        return;
+        if(queue.size()==0)
+        {
+            Node nn=new Node(Integer.parseInt(arr[ind]));
+            this.root=nn;
+            queue.add(nn);
+        }
+        else
+        {
+            Node parent=queue.peek();
+                if(parent.data!=-1){
+                if(parent.left==null)
+                {
+                    parent.left=new Node(Integer.parseInt(arr[ind]));
+                    queue.add(parent.left);
+                }
+                else
+                {
+                    if(parent.right==null)
+                    {
+                    parent.right=new Node(Integer.parseInt(arr[ind]));
+                    queue.add(parent.right);
+                    queue.poll();
+                    }
+               }
+               }
+               else
+               {
+                   queue.poll();
+                   ind--;
+               }
+        }
+        construct(arr,ind+1,queue);
+    }
+
+    public void display()
+    {
+        display_tree(this.root);
+    }
+
+    private void display_tree(Node root)
+    {
+        if(root==null)
+        return;
+        String str=root.data+"";
+        if(root.left!=null)
+        {
+            str=root.left.data+" <= "+str;
+        }
+        else
+        {
+            str="END <= "+str;
+        }
+
+        if(root.right!=null)
+        {
+            str=str+" => "+root.right.data;
+        }
+        else
+        {
+            str=str+" => END";
+        }
+        System.out.println(str);
+        display_tree(root.left);
+        display_tree(root.right);
+
+    }
+
+
+}
+
+3. Tree bottom view
+
+import java.util.*;
+import java.io.*;
+public class Main {
+    public static void main(String args[]) throws Exception{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        String[] arr=br.readLine().split(" ");
+        BinaryTree bt=new BinaryTree(arr);
+        
+        bt.bottomView();
+        
+    }
+}
+
+class BinaryTree
+{
+    private class Node
+    {
+        int data;
+        Node left,right;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    Node root;
+
+    BinaryTree(String[] arr)
+    {
+        Queue<Node> queue=new LinkedList<Node>();
+        construct(arr,0,queue);
+    }
+
+	TreeMap<Integer, List<Integer>>map = new TreeMap<>();
+    public void bottomView()
+    {
+        bottomView(this.root, 0, 0);
+		Set<Integer>keyset = map.keySet();
+		for(int key : keyset){
+			System.out.print(map.get(key).get(0)+" ");
+		}
+    }
+
+	int deep = 0;
+   private void bottomView(Node root, int axis, int deep) {
+	   if(root.data == -1)
+	   		return;
+		List<Integer>ll = new ArrayList<>();
+		ll.add(root.data);
+		ll.add(deep);
+		if(map.containsKey(axis) && deep >= map.get(axis).get(1) || !map.containsKey(axis)){
+			map.put(axis, ll);
+   		}
+
+
+
+		bottomView(root.left, axis-1, deep+1);
+		bottomView(root.right,axis+1, deep+1);
+
+	}
+
+
+    private void construct(String[] arr,int ind,Queue<Node> queue)
+    {
+        if(ind>=arr.length)
+        return;
+        if(queue.size()==0)
+        {
+            Node nn=new Node(Integer.parseInt(arr[ind]));
+            this.root=nn;
+            queue.add(nn);
+        }
+        else
+        {
+            Node parent=queue.peek();
+                if(parent.data!=-1){
+                if(parent.left==null)
+                {
+                    parent.left=new Node(Integer.parseInt(arr[ind]));
+                    queue.add(parent.left);
+                }
+                else
+                {
+                    if(parent.right==null)
+                    {
+                    parent.right=new Node(Integer.parseInt(arr[ind]));
+                    queue.add(parent.right);
+                    queue.poll();
+                    }
+               }
+               }
+               else
+               {
+                   queue.poll();
+                   ind--;
+               }
+        }
+        construct(arr,ind+1,queue);
+    }
+
+    public void display()
+    {
+        display_tree(this.root);
+    }
+
+    private void display_tree(Node root)
+    {
+        if(root==null)
+        return;
+        String str=root.data+"";
+        if(root.left!=null)
+        {
+            str=root.left.data+" <= "+str;
+        }
+        else
+        {
+            str="END <= "+str;
+        }
+
+        if(root.right!=null)
+        {
+            str=str+" => "+root.right.data;
+        }
+        else
+        {
+            str=str+" => END";
+        }
+        System.out.println(str);
+        display_tree(root.left);
+        display_tree(root.right);
+
+    }
+
+
+}
+
+
+4.Unlock
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int size = psc.nextInt();
+		int pk = psc.nextInt();
+		int[]parr = new int[size];
+		TreeMap<Integer,Integer>map = new TreeMap<>();
+		for(int i=0; i<size;i++){
+			parr[i] = psc.nextInt();
+			map.put(parr[i],i);
+		}
+
+		for(int i=0; i<size && pk > 0; i++){
+			if(parr[i] != map.lastKey()){
+				int temp = parr[i];
+				parr[i] = map.lastKey();
+				parr[map.get(map.lastKey())] = temp;
+				map.put(temp,map.get(map.lastKey()));
+				pk--;
+			}
+			map.remove(map.lastKey());
+		}
+
+		for(int i=0; i<parr.length;i++){
+			System.out.print(parr[i]+" ");
+		}
+
+
+    }
+}
+
+
+5. Sort Game
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+		Scanner psc = new Scanner(System.in);
+		int pminSal = psc.nextInt();
+		int psize = psc.nextInt();
+		PEmploy[] employees = new PEmploy[psize];
+		for(int i=0; i<psize;i++){
+			String name = psc.next();
+			int sal = psc.nextInt();
+			employees[i] = new PEmploy(name, sal);
+		}
+
+		Arrays.sort(employees, new Comparator<PEmploy>(){
+			@Override
+			public int compare(PEmploy p1, PEmploy p2){
+				if(p1.sal == p2.sal){
+					return p1.name.compareTo(p2.name);
+				}
+				else{
+					return  p2.sal - p1.sal;
+				}
+			}
+		});
+
+		for(int i=0; i<employees.length;i++){
+			if(employees[i].sal >= pminSal)
+				System.out.println(employees[i]);
+		}
+
+    }
+
+	static class PEmploy{
+		String name;
+		int sal;
+
+		public PEmploy(String name, int sal){
+			this.name = name;
+			this.sal = sal;
+		}
+
+		public String toString(){
+			return this.name+" "+this.sal;
+		}
+	}
+}
+
+
+6. Hostel Visit
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int pn = psc.nextInt();
+		int pk = psc.nextInt();
+		PriorityQueue<Long>pq = new PriorityQueue<>(Collections.reverseOrder());
+		while(pn-- > 0){
+			int qtype = psc.nextInt();
+			if(qtype == 1){
+				long n1 = psc.nextInt();
+				long n2 = psc.nextInt();
+				pq.add(n1*n1+n2*n2);
+				if(pq.size() > pk){
+					pq.poll();
+				}
+			}
+			if(qtype == 2){
+				// List<Long>list = new ArrayList<>(tset);
+				System.out.println(pq.peek());
+			}
+			// System.out.println(qtype);
+		}
+    }
+}
+
+
+7. Frequent Elements in Array
+
+
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+		Scanner psc=new Scanner(System.in);
+		int n=psc.nextInt();
+		int k=psc.nextInt();
+		HashMap<Integer,Integer> map=new HashMap<>();
+		for(int i=0;i<n;i++){
+			int num=psc.nextInt();
+			map.put(num,map.getOrDefault(num,0)+1);
+		}
+		PriorityQueue<Integer> pq=new PriorityQueue<>(new Comparator<Integer>(){
+			@Override
+			public int compare(Integer o1,Integer o2){
+				if(map.get(o1) == map.get(o2))
+					return o1-o2;
+				else
+					return map.get(o1)-map.get(o2);
+			}
+		});
+
+		
+		List<Integer> keyset=new ArrayList<>(map.keySet());
+		for(int i=0;i<k;i++)
+			pq.add(keyset.get(i));
+
+		for(int i=k;i<keyset.size();i++){
+			if(map.get(pq.peek()) <= map.get(keyset.get(i))){
+				pq.poll();
+				pq.add(keyset.get(i));
+			}
+		}
+
+
+		int[] ans=new int[k];
+		for(int i=0;i<k;i++)
+			ans[i]=pq.poll();
+		
+		Arrays.sort(ans);
+		for(int ele:ans)
+			System.out.print(ele+" ");
+		
+
+    }
+}
+
+8. Top k most frequent number in a stream
+
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner psc = new Scanner(System.in);
+        int ptcase = psc.nextInt();
+        while(ptcase-- >0){
+            int pn = psc.nextInt();
+            int pk= psc.nextInt();
+            int[] parr = new int[pn];
+            for (int i = 0; i < parr.length; i++) {
+                parr[i] = psc.nextInt();
+            }
+            TopKEle(parr,pk);
+        }
+    }
+    public static int isValid(int[] parr, int pres) {
+        for (int i = 0; i < parr.length; i++)
+            if (parr[i] == pres)
+                return i;
+        return -1;
+    }
+
+   public static void TopKEle(int[] parr,int pk) {
+        int length=parr.length;
+       int[] pnum = new int[pk + 1];
+       HashMap<Integer, Integer> map = new HashMap<>();
+       for (int i = 0; i < pk + 1; i++){
+           map.put(i, 0);
+        }
+
+        for (int j = 0; j < length; j++) {
+            if (map.containsKey(parr[j]))
+                map.put(parr[j], map.get(parr[j]) + 1);
+            else
+                map.put(parr[j], 1);
+            pnum[pk] = parr[j];
+            int i = isValid(pnum, parr[j]);
+            i -= 1;
+            while (i >= 0) {
+                if (map.get(pnum[i]) < map.get(pnum[i + 1])) {
+                    int tem = pnum[i];
+                    pnum[i] = pnum[i + 1];
+                    pnum[i + 1] = tem;
+                }
+                else if ((map.get(pnum[i]) == map.get(pnum[i + 1])) && (pnum[i] > pnum[i + 1])) {
+                    int temp = pnum[i];
+                    pnum[i] = pnum[i + 1];
+                    pnum[i + 1] = temp;
+                }
+
+                else
+                    break;
+                i -= 1;
+            }
+            for (int k = 0; k < pk && pnum[k] != 0; ++k)
+                System.out.print(pnum[k] + " ");
+        }
+        System.out.println();
+    }
+
+
+}
+
+
+9. String Sort
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int pn = psc.nextInt();
+		String []parr= new String[pn];
+		for(int i=0; i<parr.length; i++){
+			parr[i] = psc.next();
+		}
+
+		PriorityQueue<String>pq = new PriorityQueue<>(new Comparator<String>(){
+			@Override
+			public int compare(String s1, String s2){
+				if(s1.length() < s2.length () && s2.substring(0,s1.length()).equals(s1)){
+					return 1;
+				}
+				else if(s2.length() < s1.length () && s1.substring(0,s2.length()).equals(s2)){
+					return -1;
+				}
+				else
+					return s1.compareTo(s2);
+			}
+		});
+
+		for(int i=0; i<parr.length; i++){
+			pq.add(parr[i]);
+		}
+
+		for(int i=0; i<parr.length; i++){
+			System.out.println(pq.remove());
+		}
+
+    }
+}
+
+
+10. Median in a stream of running integers
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner pavansc=new Scanner(System.in);
+        int pavantest=pavansc.nextInt();
+        while(pavantest-->0){
+            int pavann=pavansc.nextInt();
+            int []pavanarr=new int[pavann];
+            for(int i=0;i<pavann;i++){
+                pavanarr[i]=pavansc.nextInt();
+            }
+            printMedian(pavanarr);
+            System.out.println();
+            
+        }
+    }
+    public static void printMedian(int pavanarr[]) {         
+        PriorityQueue<Integer> pavanmin = new PriorityQueue<>();         
+        PriorityQueue<Integer> pavanmax = new PriorityQueue<>();         
+        for (int i = 0; i < pavanarr.length; i++) {             
+            pavanmax.add(-1 * pavanarr[i]);             
+            pavanmin.add(-1 * pavanmax.poll());             
+            if (pavanmin.size() > pavanmax.size()) {                 
+                pavanmax.add(-1 * pavanmin.poll());             
+            }              
+            if (pavanmin.size() != pavanmax.size()) {                 
+                System.out.print(-1 * pavanmax.peek()+" ");             
+            }             
+            else {          
+                System.out.print(((pavanmin.peek() - pavanmax.peek()) / 2)+" ");             
+            }         
+        }     
+    }
+
+         
+}
+
+11. Mapped String
+
+
+import java.util.*;
+public class Main {
+static String arr[] = { "", "A", "B", "C", "D", "E",
+"F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+"Q",
+"R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+public static void main(String[] args) {
+Scanner pavansc = new Scanner(System.in);
+int n = pavansc.nextInt();
+String s = ""+n;
+Mappedstring(s, "");
+}
+public static void Mappedstring(String s, String ans)
+{
+if (s.length() == 0) {
+System.out.println(ans);
+return;
+}
+char s1 = s.charAt(0);
+Mappedstring(s.substring(1), ans + arr[s1-'0']);
+if (s.length() >= 2) {
+String s2 = s.substring(0, 2);
+int num = Integer.parseInt(s2);
+if (num <= 27) {
+Mappedstring(s.substring(2), ans +
+arr[num]);
+}
+}
+}
+}
+
+
+12. Merge K Sorted Lists
+
+
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int ArrCnt = psc.nextInt();
+		int size = psc.nextInt();
+		int [][] arrays = new int[ArrCnt][size];
+		for(int i=0; i<ArrCnt;i++){
+			for(int j=0; j<size;j++){
+				arrays[i][j] = psc.nextInt();
+			}
+		}
+
+		PriorityQueue<int []>pq = new PriorityQueue<>(new Comparator<int[]>(){
+			@Override
+			public int compare(int [] a1, int [] a2){
+				return arrays[a1[0]][a1[1]] - arrays[a2[0]][a2[1]];
+			}
+		});
+
+		for(int i=0; i<ArrCnt; i++){
+			int [] arr = {i,0};
+			pq.add(arr);
+		}
+
+		int []ans = new int[ArrCnt*size];
+		int i=0;
+		while(!pq.isEmpty()){
+			int[]arr = pq.poll();
+			// System.out.println(arr[0]+" "+arr[1]);
+			ans[i] = arrays[arr[0]][arr[1]];
+			if(arr[1] < size-1){
+				arr[1]++; 
+				pq.add(arr);
+			}
+			i++;
+		}
+
+		for(int j=0; j<ans.length;j++){
+			System.out.print(ans[j]+" ");
+		}
+    }
+}
+
+
+13.Subarrays with distinct elements
+
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int pn = psc.nextInt();
+		int []parr = new int[pn];
+		for(int i=0; i<parr.length;i++){
+			parr[i] = psc.nextInt();
+		}
+
+		Set<Integer>st = new HashSet<>();
+		int p = 0, ans = 0;
+		for(int i=0; i<parr.length; i++){
+			while(p<parr.length && !st.contains(parr[p])){
+				st.add(parr[p]);
+				p++;
+			}
+			ans+=((p-i)*(p-i+1))/2;
+			st.remove(parr[i]);
+		}
+		System.out.println(ans);
+    }
+}
+
+
+14. Merge K sorted Arrays
+
+
+
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+		Scanner psc = new Scanner(System.in);
+		int ArrCnt = psc.nextInt();
+		int size = psc.nextInt();
+		int [][] arrays = new int[ArrCnt][size];
+		for(int i=0; i<ArrCnt;i++){
+			for(int j=0; j<size;j++){
+				arrays[i][j] = psc.nextInt();
+			}
+		}
+
+		PriorityQueue<int []>pq = new PriorityQueue<>(new Comparator<int[]>(){
+			@Override
+			public int compare(int [] a1, int [] a2){
+				return arrays[a1[0]][a1[1]] - arrays[a2[0]][a2[1]];
+			}
+		});
+
+		for(int i=0; i<ArrCnt; i++){
+			int [] arr = {i,0};
+			pq.add(arr);
+		}
+
+		int []ans = new int[ArrCnt*size];
+		int i=0;
+		while(!pq.isEmpty()){
+			int[]arr = pq.poll();
+			// System.out.println(arr[0]+" "+arr[1]);
+			ans[i] = arrays[arr[0]][arr[1]];
+			if(arr[1] < size-1){
+				arr[1]++; 
+				pq.add(arr);
+			}
+			i++;
+		}
+
+		for(int j=0; j<ans.length;j++){
+			System.out.print(ans[j]+" ");
+		}
+    }
+}

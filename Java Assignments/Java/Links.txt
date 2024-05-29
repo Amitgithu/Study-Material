@@ -1,0 +1,15 @@
+1. Java OOPS :
+
+https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/?ref=shm
+
+2. Data Structure 
+
+https://www.javatpoint.com/data-structure-tutorial
+
+https://www.javatpoint.com/computer-network-tutorial
+
+https://www.javatpoint.com/operating-system-structure
+
+https://www.javatpoint.com/dbms-tutorial
+
+

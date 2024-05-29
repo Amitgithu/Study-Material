@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+
+public class Cheeseburger_Corollary_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int test = sc.nextInt();
+		while (test > 0) {
+			int sing = sc.nextInt();
+			int dou = sc.nextInt();
+			int K = sc.nextInt();
+			isitpossible(sing, dou, K);
+			test--;
+		}
+	}
+
+	public static void isitpossible(int single, int doub, int K) {
+		int Bun = (single + doub) * 2;
+		int Bread = single + doub * 2;
+
+		if (Bun >= K + 1 && Bread >= K) {
+			System.out.println("Yes");
+		} else {
+			System.out.println("No");
+		}
+	}
+
+}

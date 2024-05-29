@@ -1,0 +1,224 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Amit Kumar} \\ \vspace{1pt}
+    \small 9548731683 $|$ \href{mailto:amit909563@gmail.com}{\underline{amit909563@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/amit-kumar-35545b246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app}{\underline{LinkedIn Profile}} $|$
+    \href{https://github.com/Amitgithu}{\underline{Github Profile}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GLA University}{Mathura}
+      {B.Tech In Computer Science and Engineering}{Aug. 2021 -- May 2025}
+    \resumeSubheading
+      {Shriji Baba Saraswati Vidya Mandir,Mathura}{Mathura}
+      {Intermediate}{Aug. 2020 -- May 2021}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Undergraduate Research Assistant}{June 2020 -- Present}
+      {Texas A\&M University}{College Station, TX}
+      \resumeItemListStart
+        \resumeItem{Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems}
+        \resumeItem{Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data}
+        \resumeItem{Explored ways to visualize GitHub collaboration in a classroom setting}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Information Technology Support Specialist}{Sep. 2018 -- Present}
+      {Southwestern University}{Georgetown, TX}
+      \resumeItemListStart
+        \resumeItem{Communicate with managers to set up campus computers used on campus}
+        \resumeItem{Assess and troubleshoot computer problems brought by students, faculty and staff}
+        \resumeItem{Maintain upkeep of computers, classroom equipment, and 200 printers across campus}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Profiles}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Leetcode : }
+     \href{https://leetcode.com/Amit_Kumar90/} {{https://leetcode.com/Amit90}} \\
+     
+     \textbf{GeeksforGeeks : }
+     \href{https://auth.geeksforgeeks.org/user/amit90fd81/} {{https://auth.geeksforgeeks.org/user/amit90fd81}}  \\
+     
+     \textbf{Codeforces : }
+     \href{https://codeforces.com/profile/amit_kumar90} {{https://codeforces.com/profile/amit90}}
+     
+    }}
+ \end{itemize}
+
+
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Netflix Clone} $|$ \emph{HTML, CSS, JavaScript, Bootstrap}}{August 2023 – September 2023}
+          \resumeItemListStart
+            \resumeItem{Developed a visually appealing Netflix clone using HTML, CSS, and Bootstrap, focusing on design excellence.}
+            \resumeItem{Implemented meticulous design elements to closely resemble the original Netflix layout, capturing the essence of the platform}
+            \resumeItem{Ensured a seamless and engaging user experience with a responsive design.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{E-commerce} $|$ \emph{NodeJS, Express, MongoDb,  HTML, CSS, JavaScript, Bootstrap}}{November 2023 – Present}
+          \resumeItemListStart
+            \resumeItem{Developed an e-commerce site using NodeJS, Express, MongoDB, HTML, CSS, JavaScript, and Bootstrap}
+            \resumeItem{Implemented essential features including a dynamic filter page, efficient product management with add and delete capabilities etc.}
+            \resumeItem{Implemented a robust and secure authentication system to prioritize user data protection.}
+            \resumeItem{Successfully integrated a seamless payment gateway.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python} \\
+     \textbf{Web Development}{: HTML, CSS, Bootstrap, Javascript, NodeJS, MongoDB, Express} \\
+     \textbf{Core Subject}{: Operating Systems, DBMS, and OOPS} 
+     
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
