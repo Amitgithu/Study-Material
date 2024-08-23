@@ -13,6 +13,8 @@
 /*? position: absolute; */
 /*? Definition: Elements with position: absolute; are positioned relative to the nearest positioned ancestor or the initial containing block. */
 
+/* Todo => Positioned concerning its nearest non-static ancestor it means : relative, sticky, fixed it will positioned according to the parent if parent has any non-static position.
+
 /** ---------------------------------------- --> */
 
 * {
