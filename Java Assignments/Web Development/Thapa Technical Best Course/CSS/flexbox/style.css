@@ -4,6 +4,25 @@
 
 /*? Flexbox is a one-dimensional layout model that helps you distribute space along a single axis (either horizontally or vertically) in a flexible and efficient way. It allows you to align and distribute elements within a container, making it easier to create complex layouts without using floats or positioning.  */
 
+/** Important Note About Flexbox
+
+1. When you make a parent container a flex container using display: flex;, all child elements, regardless of their original display 
+settings (inline, block, inline-block), are converted into flex items.
+
+2. Flexbox then governs their layout according to the properties defined on the flex container and the flex items.
+
+3. The original display type (inline, block, inline-block) becomes irrelevant, and the elements adopt the flex layout behavior.
+
+4. If you need elements to maintain their original inline or block behavior, do not apply display: flex; to their parent container.
+
+5. Flex items internally have some characteristics of both block-level and inline-block elements but are unique in that they follow 
+the flexbox layout model. They don't exactly behave like block-level or inline-block elements, but instead, have their own behavior 
+defined by the flexbox properties.
+
+6. We can apply padding, margin, and other CSS properties to either all flex items or to specific ones, depending on your needs.
+
+*/
+
 /** ----------- Flex Container Properties (Parent) ----------- */
 
 /*? 1:  Flex Container (display: flex;):
@@ -26,7 +45,7 @@ Values: row, row-reverse, column, column-reverse.
 } */
 
 /*? if the flex-direction:row then horizontal will be main-axis 
-if flex-direction:column the vertical part will be main-axis and horizontal axis become the cross axis  */
+/*? if flex-direction:column the vertical part will be main-axis and horizontal axis become the cross axis  */
 
 /*? Items display in a row (the flex-direction property's default is row). */
 

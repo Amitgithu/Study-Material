@@ -2,6 +2,9 @@
 /** Pseudo Classes in CSS
 /** ---------------------------------------- --> */
 
+/** Pseudo-classes are keywords added to selectors in CSS that define the special state of an element. They allow you to style an 
+/** element based on its state, position, or user interaction, without requiring additional classes or IDs in your HTML.
+
 /*? 1. Link (`a:link`): This is the default state for an unvisited link. */
 
 /*? 2. Visited (`a:visited`): This state applies to a link that the user has already visited. */
