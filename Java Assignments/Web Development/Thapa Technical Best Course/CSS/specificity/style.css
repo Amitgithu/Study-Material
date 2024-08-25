@@ -21,6 +21,26 @@ Elements and pseudo-elements - Example: h1, ::before */
 /*? Avoid overusing !important since it can lead to difficult-to-maintain code. */
 /*? Use specific selectors when necessary, but strive for a balanced and maintainable approach. */
 
+/*
+
+1. Inline Styles:
+   - Highest Priority: Written directly on the HTML element, so they take precedence over all other styles.
+
+2. ID Selectors:
+   - High Priority: Target a specific, unique element using its `id`.
+
+3. Class Selectors, Attribute Selectors, and Pseudo-Classes:
+   - Medium Priority: Apply to groups of elements sharing the same class, attribute, or state.
+
+4. Type Selectors and Pseudo-Elements:
+   - Lowest Priority: Target all elements of a certain type (like all `<p>` tags) or specific parts of elements.
+
+This hierarchy helps the browser decide which styles to apply when multiple rules could affect the same element.
+
+When multiple selectors target the same element, the one that appears last in the CSS file takes precedence.
+
+*/
+
 /** ---------------------------------------- --> */
 
 * {

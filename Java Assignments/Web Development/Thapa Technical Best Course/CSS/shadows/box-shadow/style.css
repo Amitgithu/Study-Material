@@ -15,6 +15,21 @@ Unlike border, it not a part of CSS Box Model, thus doesn't effect the layout ev
 
  /* Example : box-shadow: none|h-offset v-offset blur spread color; */
 
+/*todo Box Shadow Description :
+
+/*? box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color] ;
+
+/*? offset-x: The horizontal offset of the shadow. Positive values move the shadow to the right, and negative values move it to the left.
+
+/*? offset-y: The vertical offset of the shadow. Positive values move the shadow down, and negative values move it up.
+
+/*? blur-radius (optional): The blur radius of the shadow. The higher the value, the more blurred the shadow becomes. A value of 0 will make the shadow sharp.
+
+/*? spread-radius (optional): The spread radius of the shadow. Positive values make the shadow larger, while negative values make it smaller.
+
+/*? color: The color of the shadow. This can be any valid color value (e.g., named colors, HEX, RGB, RGBA, HSL, HSLA).
+
+
 /** ---------------------------------------- --> */
 
 * {

@@ -14,10 +14,12 @@ Widely used in creating responsive layouts.
 Example: width: 50%; sets an element's width to 50% of its parent's width. */
 
 /*? Em (em): em is a relative unit that is calculated based on the font size of the parent element.
-When you set an element's size in em, it's relative to the font size of its nearest parent with a specified font size. */
+When you set an element's size in em, it's relative to the font size of its nearest parent with a specified font size.
+Example: font-size: 2em; sets an element's font size to 2 times the font size of its parent element.  */
 
 /*? Root Em (rem): rem is also a relative unit like em, but it's based on the font size of the root (html) element.
-Using rem ensures that the size is consistent throughout the entire document, making it especially useful for responsive design. */
+Using rem ensures that the size is consistent throughout the entire document, making it especially useful for responsive design.
+Example: font-size: 1.5rem; sets an element's font size to 1.5 times the font size of the root (html) element.  */
 
 /** ------------------------------------- -->
 /**  IMPORTANT TIPS + NOTES

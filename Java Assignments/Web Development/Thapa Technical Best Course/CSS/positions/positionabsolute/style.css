@@ -15,6 +15,8 @@
 
 /* Todo => Positioned concerning its nearest non-static ancestor it means : relative, sticky, fixed it will positioned according to the parent if parent has any non-static position.
 
+/*? But most suitable parent is relative as fixed and sticky does not work properly as it stick or fixed at particular place which makes ugly apperance.
+
 /** ---------------------------------------- --> */
 
 * {

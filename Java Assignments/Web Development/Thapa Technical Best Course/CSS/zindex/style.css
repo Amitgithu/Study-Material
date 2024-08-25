@@ -13,7 +13,7 @@
 /* You can assign numeric values to z-index. Elements with higher numeric values will appear in front of elements with lower values. */
 
 /*? Negative Values: */
-/* You can also use negative values for z-index. Elements with lower (more negative) values will appear in front of elements with higher (less negative) values. */
+/* You can also use negative values for z-index. Elements with higher (less negative) values will appear in front of elements with lower (more negative) values. */
 
 /** ---------------------------------------- --> */
 
@@ -59,7 +59,6 @@ body {
   place-items: center;
   font-size: 3.2rem;
   color: #003180;
-
   position: absolute;
 }
 
