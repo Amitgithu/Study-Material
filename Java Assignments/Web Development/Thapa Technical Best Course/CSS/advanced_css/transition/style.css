@@ -36,6 +36,31 @@ Example: Starting the transition after 0.5 seconds. */
 /* property name | duration | easing function | delay */
 /*? transition: margin-right 4s ease-in-out 1s; */
 
+/** Summary of Applying CSS Transition:
+
+  1. Identify Element and Properties: Choose the HTML element and CSS properties you want to animate (e.g., width, background-color).
+
+  2. Set Initial State: Define the starting styles for the element (e.g., width: 100px; background-color: blue;).
+
+  3. Add transition Property: Specify the properties to animate, along with duration and timing:
+
+  Example:
+
+  transition: property duration timing-function;
+  transition: width 2s ease-in-out, background-color 1s;
+
+  4. Define New State: Set the styles that will apply when the element is interacted with (e.g., on hover):
+
+  .box:hover {
+      width: 200px;
+      background-color: red;
+  }
+  
+  Note : transition: all will apply transitions to all animatable properties, and they will animate from their default or initial state 
+  to the new state defined by the event.
+
+*/
+
 /** ---------------------------------------- --> */
 
 * {
@@ -98,7 +123,7 @@ a {
   color: #fff;
   width: 200px;
   text-align: center;
-  /*?TRANSITIONCODESTARTSHERE*/
+  /*? TRANSITION CODE STARTS HERE*/
   /* transition-property: width, color, background-color; */
   /* transition-duration: 1s;
   transition-timing-function: linear;

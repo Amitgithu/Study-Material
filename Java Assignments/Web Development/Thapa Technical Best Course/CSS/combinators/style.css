@@ -6,13 +6,55 @@
 
 /*? Descendant Selector (Space): Selects an element that is a descendant of another element. */
 
+/* Example: */
+div p {
+  color: blue; /* Targets all <p> elements that are inside a <div> element */
+}
+
+/** Explanation: Any <p> element that is inside a <div> will have its text color set to blue, regardless of how deeply nested the <p> is within the <div>. */
+
 /*? Child Selector (>): Selects an element that is a direct child of another element. */
+
+/* Example: */
+ul > li {
+  font-weight: bold; /* Targets only <li> elements that are direct children of a <ul> element */
+}
+
+/** Explanation: Only <li> elements that are direct children of a <ul> will be bold. Nested <li> elements inside other <li> elements will not be affected. */
 
 /*? Adjacent Sibling Selector (+): Selects an element that is immediately preceded by another element. */
 
+/* Example: */
+h1 + p {
+  margin-top: 0; /* Targets the first <p> element immediately following any <h1> element */
+}
+
+/** Explanation: The first <p> element immediately following an <h1> will have no top margin. This only affects the <p> that directly follows the <h1>. */
+
 /*? General Sibling Selector (~): Selects all elements that are siblings of another element and share the same parent. */
 
+/* Example: */
+h2 ~ p {
+  color: green; /* Targets all <p> elements that are siblings of any <h2> element */
+}
+
+/** Explanation: All <p> elements that follow an <h2> (and share the same parent) will have their text color set to green. */
+
 /*? Universal Selector (*): Selects all elements. */
+
+/* Example: */
+/* *{
+  border: 1px solid black; /* Targets all elements in the document and applies a border */
+/* } */
+
+/** Explanation: A border is applied to every element on the page, affecting the appearance of all HTML elements. */
+
+/* todo : Difference between Adjacent Sibling and General Sibling
+
+/*? Adjacent Sibling Selector (+): Targets the first element that comes immediately after another specified element, provided both have the same parent. */
+
+/*? General Sibling Selector (~): Targets all elements that come after a specified element, as long as they share the same parent. */
+
 
 * {
   margin: 0;
