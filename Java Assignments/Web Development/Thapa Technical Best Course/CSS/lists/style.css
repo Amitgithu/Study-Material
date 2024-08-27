@@ -12,11 +12,11 @@ ordered lists (<ol>) - the list items are marked with numbers or letters */
 
 /*? The list-style-image property specifies an image as the list item marker: */ 
 
-/** list-style-position: outside;
+/** list-style-image: url("../images/mario-run.gif");
 
 /*? The list-style-position property specifies the position of the list-item markers (bullet points). */ 
 
-/** list-style-image: url("../images/mario-run.gif");
+/** list-style-position: outside;
 
 /*? The list-style property is a shorthand property. It is used to set all the list properties in one declaration: */
 

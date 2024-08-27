@@ -17,7 +17,7 @@ Unlike border, it not a part of CSS Box Model, thus doesn't effect the layout ev
 
 /*todo Box Shadow Description :
 
-/*? box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color] ;
+/** box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color] ;
 
 /*? offset-x: The horizontal offset of the shadow. Positive values move the shadow to the right, and negative values move it to the left.
 

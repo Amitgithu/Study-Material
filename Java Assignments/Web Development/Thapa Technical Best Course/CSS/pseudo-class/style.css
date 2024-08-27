@@ -3,30 +3,105 @@
 /** ---------------------------------------- --> */
 
 /** Pseudo-classes are keywords added to selectors in CSS that define the special state of an element. They allow you to style an 
-/** element based on its state, position, or user interaction, without requiring additional classes or IDs in your HTML.
+/** element based on its state, position, or user interaction, without requiring additional classes or IDs in your HTML. */
 
-/*? 1. Link (`a:link`): This is the default state for an unvisited link. */
+/*? 1. Link (`a:link`): 
+The default state for an unvisited link. */
 
-/*? 2. Visited (`a:visited`): This state applies to a link that the user has already visited. */
+/* Example: */
+a:link {
+  color: blue; /* Unvisited links will be blue */
+}
 
-/*? 3. Hover (`a:hover`): This state triggers when the user hovers their mouse pointer over a link. */
+/*? 2. Visited (`a:visited`): 
+This state applies to a link that the user has already visited. */
 
-/*? 4. Active (`a:active`): This state is triggered when the user clicks on a link. */
+/* Example: */
+a:visited {
+  color: purple; /* Visited links will be purple */
+}
 
-/*? 5: :hover - This pseudo-class is used for styling an element when a user hovers their mouse over it. */
-/* a:hover {    color: #A78295; Change text color on hover   } */
+/*? 3. Hover (`a:hover`): 
+This state triggers when the user hovers their mouse pointer over a link. */
 
-/*? 6: :first-child - Selects the first child element of its parent. */
+/* Example: */
+a:hover {
+  color: red; /* Links will turn red when hovered over */
+}
 
-/*? 7: :last-child - Selects the last child element of its parent. */
+/*? 4. Active (`a:active`): 
+This state is triggered when the user clicks on a link. */
 
-/*? 8: :nth-child(n) - Selects elements based on their position within a parent element, where "n" is a numeric value. */
+/* Example: */
+a:active {
+  color: green; /* Links will turn green when clicked */
+}
 
-/*? 9: :first-of-type - Selects the first element of its type within its parent. */
+/*? 5: :hover 
+This pseudo-class is used for styling an element when a user hovers their mouse over it. */
 
-/*? 10: :last-of-type - Selects the last element of its type within its parent. */
+/* Example: */
+button:hover {
+  background-color: #A78295; /* Change button background color on hover */
+}
 
-/*? 11: :nth-of-type(n) - Selects elements of a specified type based on their position within a parent. */
+/*? 6: :first-child 
+Selects the first child element of its parent that matches the specified element type. */
+
+/* Example: */
+p:first-child {
+  font-weight: bold; /* The first <p> element inside any parent will be bold */
+}
+
+/* Explanation: 
+This targets a `<p>` element that is the first child of its parent. If a `<p>` is the first child within a parent, it will be styled with bold text. */
+
+/*? 7: :last-child 
+Selects the last child element of its parent that matches the specified element type. */
+
+/* Example: */
+p:last-child {
+  font-style: italic; /* The last <p> element inside any parent will be italic */
+}
+
+/* Explanation: 
+This targets a `<p>` element that is the last child of its parent. If a `<p>` is the last child within a parent, it will be styled with italic text. */
+
+/*? 8: :nth-child(n) 
+Selects elements based on their position within a parent element, where "n" is a numeric value. */
+
+/* Example: */
+p:nth-child(2) {
+  color: blue; /* The second child <p> element of any parent will have blue text */
+}
+
+/* Explanation: 
+This targets a `<p>` element that is the nth child within its parent, where "n" is the specified position. If a `<p>` is the second child, it will have blue text. */
+
+/*? 9: :first-of-type 
+Selects the first element of its type within its parent. */
+
+/* Example: */
+p:first-of-type {
+  text-decoration: underline; /* The first <p> of its type in a parent will be underlined */
+}
+
+/*? 10: :last-of-type 
+Selects the last element of its type within its parent. */
+
+/* Example: */
+p:last-of-type {
+  text-decoration: line-through; /* The last <p> of its type in a parent will have a line-through */
+}
+
+/*? 11: :nth-of-type(n) 
+Selects elements of a specified type based on their position within a parent. */
+
+/* Example: */
+p:nth-of-type(2) {
+  font-size: 18px; /* The second <p> of its type in a parent will have a font size of 18px */
+}
+
 
 * {
   margin: 0;
