@@ -50,7 +50,7 @@ Selects the first child element of its parent that matches the specified element
 
 /* Example: */
 p:first-child {
-  font-weight: bold; /* The first <p> element inside any parent will be bold */
+  font-weight: bold;
 }
 
 /* Explanation: 
@@ -61,7 +61,7 @@ Selects the last child element of its parent that matches the specified element 
 
 /* Example: */
 p:last-child {
-  font-style: italic; /* The last <p> element inside any parent will be italic */
+  font-style: italic;
 }
 
 /* Explanation: 
@@ -72,7 +72,7 @@ Selects elements based on their position within a parent element, where "n" is a
 
 /* Example: */
 p:nth-child(2) {
-  color: blue; /* The second child <p> element of any parent will have blue text */
+  color: blue;
 }
 
 /* Explanation: 
