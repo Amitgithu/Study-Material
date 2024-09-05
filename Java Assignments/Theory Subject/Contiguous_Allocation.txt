@@ -1,0 +1,3 @@
+Contiguous meaning fixed boundary of a partition that can not be increase or decrese at any cost.
+ek partition ka m size increase or decrease nahi kar sakta or process ko ek se jyada partition m nahi daal sakta .
+1partition = 1 process iske ander m dusra process daal hi sakta
